@@ -1,0 +1,5 @@
+yabai -m config left_padding 24
+yabai -m config right_padding 24
+yabai -m config window_gap 24
+
+yabai -m config external_bar all:76:12

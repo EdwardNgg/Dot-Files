@@ -1,0 +1,70 @@
+#!/bin/bash
+
+COMPONENT_DIR="$CONFIG_DIR/components"
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+THEME_DIR="$CONFIG_DIR/themes"
+
+source "$THEME_DIR/colors.sh"
+source "$THEME_DIR/icons.sh"
+source "$THEME_DIR/components/menu_item.sh"
+source "$THEME_DIR/components/menu_divider.sh"
+
+# Draw a new menu bar.
+bar=(
+  position="top"
+  height=40
+  margin=24
+  y_offset=24
+  corner_radius=20
+  blur_radius=30
+  color=$PRIMARY_CONTAINER
+)
+sketchybar --bar "${bar[@]}"
+
+# Set default styling for menu bar items.
+defaults=(
+  padding_left=8
+  padding_right=8
+  icon.font="boxicons:Regular:24.0"
+  icon.align="center"
+  label.font="Fira Sans:Bold:14.0"
+  icon.color=$ON_PRIMARY_CONTAINER
+  label.color=$ON_PRIMARY_CONTAINER
+  icon.padding_left=8
+  icon.padding_right=8
+  label.padding_left=4
+  label.padding_right=4
+  popup.y_offset=4
+  popup.background.color=$PRIMARY
+  popup.background.corner_radius=4
+  popup.background.shadow.drawing=true
+  popup.background.shadow.color=$SHADOW
+  popup.background.shadow.distance=3
+  slider.knob.font="boxicons:Regular:14.0"
+  slider.knob=$CIRCLE
+  slider.highlight_color=$ON_PRIMARY_CONTAINER
+  slider.background.color=$PRIMARY_CONTAINER
+  slider.background.height=4
+  slider.background.corner_radius=2
+)
+sketchybar --default "${defaults[@]}"
+
+# Create an Apple Menu.
+source "$COMPONENT_DIR/apple.sh"
+# Create a list of spaces.
+source "$COMPONENT_DIR/spaces.sh"
+# Create the front app label.
+source "$COMPONENT_DIR/front_app.sh"
+
+# Create a clock.
+source "$COMPONENT_DIR/clock.sh"
+
+source "$COMPONENT_DIR/battery.sh"
+
+source "$COMPONENT_DIR/wifi.sh"
+
+source "$COMPONENT_DIR/volume.sh"
+
+source "$COMPONENT_DIR/media.sh"
+
+sketchybar --update
