@@ -24,6 +24,7 @@ SPEAKER=""
 
 CIRCLE=""
 
+SITEMAP=""
 WIFI=""
 WIFI_0=""
 WIFI_1=""
