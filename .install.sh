@@ -18,6 +18,7 @@ echo "Installing Homebrew Formulae ..."
 brew install sketchybar
 brew install skhd
 brew install yabai
+brew install jq
 brew install switchaudio-osx
 brew install nowplaying-cli
 
